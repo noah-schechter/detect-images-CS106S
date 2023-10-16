@@ -5,12 +5,6 @@ ABOUT:
 hashing.js contains the starter code for several tools that
 detect known harmful files on a server.
 
-NOTE: 
-Before running, please fork this repl by:
-1. Clicking on "106S"
-2. Clicking on the three dots in the upper right corner of the modal
-3. Clicking fork.
-
 BACKGROUND:
 We're Stanford sysadmins observing a server for harmful content—
 in this case, we're looking to catch Cal logos on the server.
@@ -156,7 +150,7 @@ HARMFUL_HASHES = [
   (but not identical) to a reference file, and the distance between those two files. 
   
   In this case, we're specifically looking at findSimilar("./server/14a.jpeg").
-  
+
   Implementation notes: 
   - hammingDistance uses a binary representation of hashes and calculates those 
   within the function, so there's no need to call getHash, which uses a hexadecimal format, here.
