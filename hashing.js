@@ -153,7 +153,9 @@ HARMFUL_HASHES = [
   /* We're worried that users are modifying Cal logos slightly to evade 
   detection by our system. findSimilar() is a proof-of-concept system to
   combat this practice—-it returns an array containg the file most similar 
-  (but not identical) to the 14a.jpeg, and the distance between those two files. 
+  (but not identical) to a reference file, and the distance between those two files. 
+  
+  In this case, we're specifically looking at findSimilar("./server/14a.jpeg").
   
   Implementation notes: 
   - hammingDistance uses a binary representation of hashes and calculates those 
@@ -163,10 +165,9 @@ HARMFUL_HASHES = [
   - To return an array, simply return [element1, element2];
   - In case it's helpful, no two files are going to have a Hamming Distance of more than, 
   say, 100000. */
-  function findSimilar() {
+  function findSimilar(original) {
     let dir = "./server"
     let filenames = getFilenames(); // An array of image filnames to scan
-    let original = "./server/14a.jpeg";
 
     /****** TODO ******/
     return ["Not yet implemented", 0]; // Delete this line and implement
@@ -193,8 +194,8 @@ HARMFUL_HASHES = [
     console.log("Similar images hammingDistance was:", hammingDistance("./server/4.jpeg", "./server/17.jpeg"));
     console.log("Starkly different images hammingDistance was:", hammingDistance("./server/20.jpeg", "./server/20a.jpeg"));
   
-    // Open this file! See if you can figure out how our malicious user modified the file.
-    findSimilar().then(value => { console.log("System-evading file: ", value) });
+    // Open the file this function returns! See if you can figure out how our malicious user modified the file.
+    console.log("System-evading file: ", findSimilar("./server/14a.jpeg"));
   
   }
   
