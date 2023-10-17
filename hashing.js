@@ -5,17 +5,6 @@ ABOUT:
 hashing.js contains the starter code for several tools that
 detect known harmful files on a server.
 
-BACKGROUND:
-We're Stanford sysadmins observing a server for harmful content—
-in this case, we're looking to catch Cal logos on the server.
-
-First, we'll implement tools that help us find exact matches of known 
-Cal logos. 
-
-Then, we'll try to catch users skirting this system by modifying 
-their Cal logos. 
-
-
 TODOs:
 1. Implement the function isHarmful, which takes in a 
 filepath and determines whether that file's hash is in 
