@@ -25,6 +25,9 @@ _Why don't we use a perceptual hashing library in this assignment?_
 It turns out there don't seem to be great client-side Javascript perceptual hashing libraries. Instead, we've used `imghash`, a node.js 
 library, to take the perceptual hashes of each image in advance. 
 
+### `data.js`
+`data.js` contains the hash data for our images; it builds Javascript maps for the hashes in two formats—hexadecimal and binary.
+
 ## Exercise
 ### 1. Implement `isHarmful(path)`
 `isHarmful()` takes in a filepath, `path` to an image and determines whether that image's perceptual hash 
