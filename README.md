@@ -1,4 +1,6 @@
 # Harmful Content Detection with Perceptual Hashing
+_This starter code was written for a lesson on safety-first product development for CS106S at Stanford University._
+
 ## Introduction
 To coninue our conversation on harmful content detection, we're going to be implementing a simple system that mimics the 
 way products scan files for known harmful content like CSAM. In this exercise, we'll use perceptual hashes to identify known harmful 
