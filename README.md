@@ -51,9 +51,10 @@ Implementation notes:
 - Add something to a JS array, use `array.push(item)`. 
 
 ### 3. Implement `hammmingDistance(img1, img2)`
-For two images with filepaths img1 and img2, returns the Hamming distance between the two. The Hamming distance of 
+For two images with filepaths img1 and img2, returns the Hamming distance between the two hashes. The Hamming distance of 
 two perceptual hashes is equal to the number of different bits they have. For instance, if we're looking at the perceptual 
-hashes `10011` and `11011`, their Hamming distance would be 1. 
+hashes `10011` and `11011`, their Hamming distance would be 1. Note that this is a very rudimentary implementation and 
+is limited in practical applications.
   
   Implementation notes:
   - There are multiple ways of looping through something in JS. We already saw the `for (let item in items)` method. 
