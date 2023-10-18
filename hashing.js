@@ -115,9 +115,10 @@ HARMFUL_HASHES = [
   }
   
   
-  /* For two images with filepaths img1 and img2, returns the hammingDistance between the two.
+  /* For two images with filepaths img1 and img2, returns the hammingDistance between the two hashes.
   The Hamming distance of two perceptual hashes is equal to the number of different bits they have. For instance, if we're looking
-  at the perceptual hashes "10011" and "11011", their Hamming distance would be 1. 
+  at the perceptual hashes "10011" and "11011", their Hamming distance would be 1. Note that this
+  is a very rudimentary means of finding the similarity of images—don't depend on this in production.
   
   Implementation notes:
   - There are multiple ways of looping through something in JS. We already saw the "for (let item in items)" method. 
