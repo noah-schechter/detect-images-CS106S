@@ -166,7 +166,7 @@ HARMFUL_HASHES = [
     console.log("isHarmful(1.jpeg) returned", isHarmful("./server/1.jpeg"), "Expected:", false);
   
     // Should return true
-    console.log("isHarmful(1a.jpeg) returned", isHarmful("./server/1.jpeg"), "Expected:", true);
+    console.log("isHarmful(1a.jpeg) returned", isHarmful("./server/1a.jpeg"), "Expected:", true);
   
     /* Scans the images directory for harmful content. 
     Awaits the result, then prints to the console. */
