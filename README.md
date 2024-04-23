@@ -21,7 +21,7 @@ their Cal logos.
 `hashing.js` contains the starter code for this exercise. You'll find several functions already implemented:
 - `getHash(filePath)` takes in a file path and returns that file's hexadecimal perceptual hash. This will look like a string of numbers and letters. If the path isn't valid (if it doesn't point to a file in the "server" directory), this function returns 0.
 - `getHashBinary(filePath)` takes in a file path and returns the file's binary perceptual hash.  If the path isn't valid (if it doesn't point to a file in the "server" directory), this function returns 0.
-- `getFilenames()` returns the images contained in the server directory. Note that this function "cheats"—instead of scanning that directory, it just returns the keys of our hashes map. That means that if you add something to the directory, getFilenames() won't reflect that change. 
+- `getFilenames()` returns the names of the images contained in the server directory. Note that this function "cheats"—instead of scanning that directory, it just returns the keys of our hashes map. That means that if you add something to the directory, getFilenames() won't reflect that change. 
 
 _Why don't we use a perceptual hashing library in this assignment?_
 It turns out there don't seem to be great client-side Javascript perceptual hashing libraries. Instead, we've used `imghash`, a node.js 
@@ -40,7 +40,7 @@ Implementation notes:
 - Use `a.includes(b)` to check whether `b` is in array `a`.
 
 ### 2. Implement `scanImages(dir)`
-`isHarmful()` takes in a directory name, `dir`, and returns an array of files in the images list that we know to be harmful. Returns an empty array if none are detected. 
+`isHarmful()` takes in a directory name, `dir`, and returns an array of filepaths of images in the list that we know to be harmful. Returns an empty array if none are detected. 
 
 Implementation notes:
 - Get the full path of a file by appending the directory (`dir`) to the filename. 
@@ -63,7 +63,7 @@ is limited in practical applications.
 ### 4. Implement `findSimilar(original)`
 We're worried that users are modifying Cal logos slightly to evade detection by our system. 
 findSimilar() is a proof-of-concept system to combat this practice—-it returns an array containg the 
-file most similar (but not identical) to a reference file, `original`, and the distance between those two files. 
+names of the file most similar (but not identical) to a reference file, `original`, and the distance between those two files. 
 That means the return value should be of the form `["img.jpeg", 4]`.
   
 In this case, we're specifically looking at findSimilar("./server/14a.jpeg").
