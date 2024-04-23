@@ -137,7 +137,7 @@ HARMFUL_HASHES = [
   
   /* We're worried that users are modifying Cal logos slightly to evade 
   detection by our system. findSimilar() is a proof-of-concept system to
-  combat this practice—-it returns an array containg the path of the most similar 
+  combat this practice—-it returns an array containg the name of the most similar 
   (but not identical) file to a reference file, and the distance between those two files. 
   
   In this case, we're specifically looking at findSimilar("./server/14a.jpeg").
