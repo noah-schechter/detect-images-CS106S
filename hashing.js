@@ -74,7 +74,7 @@ HARMFUL_HASHES = [
   }
   
   
-  /* getFilenames() returns the list of all filenames on our server. No need to edit this one :) */
+  /* getFilenames() returns the list of all filenames in the server directory. No need to edit this one :) */
   function getFilenames() {
     let filenames = [];
     for (let filePath of hashesMap) {
@@ -97,8 +97,9 @@ HARMFUL_HASHES = [
   }
   
   
-  /* scanImages() takes in a directory name and returns an array of files in the images list that we know to be harmful. Returns an empty array if none are detected. 
-  
+  /* scanImages() takes in a directory name and returns an array of file names in that directory that we know to be harmful. Returns an empty array if none are detected. 
+     scanImages will be run as scanImages("./server"), so we've already fetched the file names in the server directory for you.
+     
   Implementation notes:
   - get the full path of a file by appending the directory (dir) to the filename. 
   - Be careful about slashes: the directory "./images" can't be appended to the filename "cheese.jpeg"; 
@@ -136,8 +137,8 @@ HARMFUL_HASHES = [
   
   /* We're worried that users are modifying Cal logos slightly to evade 
   detection by our system. findSimilar() is a proof-of-concept system to
-  combat this practice—-it returns an array containg the file most similar 
-  (but not identical) to a reference file, and the distance between those two files. 
+  combat this practice—-it returns an array containg the path of the most similar 
+  (but not identical) file to a reference file, and the distance between those two files. 
   
   In this case, we're specifically looking at findSimilar("./server/14a.jpeg").
 
@@ -151,7 +152,7 @@ HARMFUL_HASHES = [
   say, 100000. */
   function findSimilar(original) {
     let dir = "./server"
-    let filenames = getFilenames(); // An array of image filnames to scan
+    let filenames = getFilenames(); // An array of image filenames to scan
 
     /****** TODO ******/
     return ["Not yet implemented", 0]; // Delete this line and implement
